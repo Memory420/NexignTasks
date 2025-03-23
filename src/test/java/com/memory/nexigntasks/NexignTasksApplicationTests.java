@@ -1,6 +1,7 @@
 package com.memory.nexigntasks;
 
 import com.memory.nexigntasks.Entities.CDRRecord;
+import com.memory.nexigntasks.Entities.CallType;
 import com.memory.nexigntasks.Repositories.CDRRecordRepository;
 import com.memory.nexigntasks.Services.CDRService;
 import org.junit.jupiter.api.Test;
@@ -14,8 +15,12 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Тесты для CDRService. Проверяем логику получения CDR по ID.
+ */
 @SpringBootTest
 class NexignTasksApplicationTests {
+
     @Autowired
     private CDRService cdrService;
 
@@ -24,7 +29,13 @@ class NexignTasksApplicationTests {
 
     @Test
     void testGetCDRRecord() {
-        CDRRecord record = new CDRRecord("01", "79555353535", "79123456789", LocalDateTime.now(), LocalDateTime.now().plusMinutes(3));
+        CDRRecord record = new CDRRecord(
+                CallType.OUTGOING,
+                "79555353535",
+                "79123456789",
+                LocalDateTime.now(),
+                LocalDateTime.now().plusMinutes(3)
+        );
         record.setId(1L);
 
         Mockito.when(cdrRecordRepository.findById(1L)).thenReturn(Optional.of(record));
@@ -32,6 +43,7 @@ class NexignTasksApplicationTests {
         CDRRecord result = cdrService.getCDRRecord(1L);
         assertNotNull(result);
         assertEquals(record.getId(), result.getId());
+        assertEquals(CallType.OUTGOING, result.getCallType());
         assertEquals("79555353535", result.getCallingMsId());
         assertEquals("79123456789", result.getReceivingMsId());
     }

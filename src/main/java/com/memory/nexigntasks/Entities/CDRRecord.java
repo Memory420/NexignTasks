@@ -1,22 +1,29 @@
 package com.memory.nexigntasks.Entities;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Entity
 public class CDRRecord {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String callType;
+
+    @Convert(converter = CallTypeConverter.class)
+    private CallType callType;
+
     private String callingMsId;
     private String receivingMsId;
     private LocalDateTime callStartTime;
     private LocalDateTime callEndTime;
 
-    public CDRRecord(String callType, String callingMsId, String receivingMsId, LocalDateTime callStartTime, LocalDateTime callEndTime) {
+    public CDRRecord(CallType callType,
+                     String callingMsId,
+                     String receivingMsId,
+                     LocalDateTime callStartTime,
+                     LocalDateTime callEndTime) {
         this.callType = callType;
         this.callingMsId = callingMsId;
         this.receivingMsId = receivingMsId;
@@ -31,7 +38,7 @@ public class CDRRecord {
         return id;
     }
 
-    public String getCallType() {
+    public CallType getCallType() {
         return callType;
     }
 
@@ -54,7 +61,6 @@ public class CDRRecord {
     public void setId(Long id) {
         this.id = id;
     }
-
 
     public static String prettyDateTime(LocalDateTime dateTime) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
