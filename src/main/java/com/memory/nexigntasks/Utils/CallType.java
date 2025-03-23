@@ -1,4 +1,4 @@
-package com.memory.nexigntasks.Entities;
+package com.memory.nexigntasks.Utils;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 

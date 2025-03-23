@@ -1,7 +1,7 @@
 package com.memory.nexigntasks;
 
 import com.memory.nexigntasks.Entities.CDRRecord;
-import com.memory.nexigntasks.Entities.CallType;
+import com.memory.nexigntasks.Utils.CallType;
 import com.memory.nexigntasks.Repositories.CDRRecordRepository;
 import com.memory.nexigntasks.Services.CDRService;
 import org.junit.jupiter.api.Test;

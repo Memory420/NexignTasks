@@ -1,5 +1,7 @@
 package com.memory.nexigntasks.Entities;
 
+import com.memory.nexigntasks.Utils.CallType;
+import com.memory.nexigntasks.Utils.CallTypeConverter;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

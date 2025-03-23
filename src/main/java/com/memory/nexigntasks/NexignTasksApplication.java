@@ -1,7 +1,7 @@
 package com.memory.nexigntasks;
 
 import com.memory.nexigntasks.Entities.CDRRecord;
-import com.memory.nexigntasks.Entities.CallType;
+import com.memory.nexigntasks.Utils.CallType;
 import com.memory.nexigntasks.Entities.Subscriber;
 import com.memory.nexigntasks.Repositories.CDRRecordRepository;
 import com.memory.nexigntasks.Repositories.SubscriberRepository;
@@ -12,7 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.time.LocalDateTime;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static com.memory.nexigntasks.Entities.CDRRecord.prettyDateTime;
 
@@ -62,6 +61,9 @@ public class NexignTasksApplication implements CommandLineRunner {
         }                                                                         //
 
         recordRepository.saveAll(records);
+
+
+
     }
 
     // Все методы снизу служебные и нужны для создания тестовых данных
@@ -84,7 +86,7 @@ public class NexignTasksApplication implements CommandLineRunner {
     static LocalDateTime randomTimeFromNow(int i){
         Random r = new Random();
         LocalDateTime now = LocalDateTime.now();
-        return now.plusMonths(i).plusSeconds(r.nextInt(2592000));
+        return now.plusMonths(i).plusSeconds(r.nextInt(2592000)).minusYears(1).minusDays(2);
     }
 
     /**

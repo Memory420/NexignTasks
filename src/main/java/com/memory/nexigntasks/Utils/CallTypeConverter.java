@@ -1,4 +1,4 @@
-package com.memory.nexigntasks.Entities;
+package com.memory.nexigntasks.Utils;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;

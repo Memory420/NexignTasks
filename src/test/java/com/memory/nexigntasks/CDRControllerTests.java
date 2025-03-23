@@ -1,10 +1,8 @@
 package com.memory.nexigntasks;
 
-import com.memory.nexigntasks.Controllers.CDRController;
 import com.memory.nexigntasks.Entities.CDRRecord;
-import com.memory.nexigntasks.Entities.CallType;
+import com.memory.nexigntasks.Utils.CallType;
 import com.memory.nexigntasks.Repositories.CDRRecordRepository;
-import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
