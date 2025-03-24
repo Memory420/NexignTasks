@@ -49,7 +49,7 @@ class CDRControllerTests {
         mockMvc.perform(get("/api/cdrrecord/1"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.callType").value("OUTGOING"))
+                .andExpect(jsonPath("$.callType").value("01"))
                 .andExpect(jsonPath("$.callingMsId").value("79123456789"))
                 .andExpect(jsonPath("$.receivingMsId").value("79991112233"));
     }
@@ -90,7 +90,7 @@ class CDRControllerTests {
                 .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(jsonPath("$[0].id").value(1))
                 .andExpect(jsonPath("$[1].id").value(2))
-                .andExpect(jsonPath("$[0].callType").value("OUTGOING"))
-                .andExpect(jsonPath("$[1].callType").value("INCOMING"));
+                .andExpect(jsonPath("$[0].callType").value("01"))
+                .andExpect(jsonPath("$[1].callType").value("02"));
     }
 }
