@@ -1,6 +1,8 @@
 package com.memory.nexigntasks.DTO;
 
-
+/**
+ * DTO для отдачи UDR.
+ */
 public class UdrDTO {
 
     private String msisdn;

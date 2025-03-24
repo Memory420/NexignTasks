@@ -1,5 +1,8 @@
 package com.memory.nexigntasks.DTO;
 
+/**
+ * DTO для суммарной длительности (в формате hh:mm:ss).
+ */
 public class CallDurationDTO {
 
     private String totalTime;

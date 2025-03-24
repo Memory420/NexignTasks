@@ -3,6 +3,9 @@ package com.memory.nexigntasks.Utils;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 
+/**
+ * Конвертер для хранения CallType как 01/02 в БД.
+ */
 @Converter(autoApply = false)
 public class CallTypeConverter implements AttributeConverter<CallType, String> {
 

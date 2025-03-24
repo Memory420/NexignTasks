@@ -2,6 +2,9 @@ package com.memory.nexigntasks.Utils;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
+/**
+ * Тип вызова: 01 - OUTGOING, 02 - INCOMING.
+ */
 public enum CallType {
 
     OUTGOING("01"),

@@ -6,6 +6,10 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Сущность CDR записи.
+ * Хранит информацию о типе вызова, номерах и времени.
+ */
 @Entity
 public class CDRRecord {
 
@@ -64,6 +68,9 @@ public class CDRRecord {
         this.id = id;
     }
 
+    /**
+     * Форматирует LocalDateTime в строку "yyyy-MM-ddTHH:mm:ss".
+     */
     public static String prettyDateTime(LocalDateTime dateTime) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");

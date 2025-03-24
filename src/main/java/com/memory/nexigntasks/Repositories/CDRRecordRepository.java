@@ -8,6 +8,9 @@ import org.springframework.data.repository.query.Param;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Репозиторий для CRUD операций над CDR записями.
+ */
 public interface CDRRecordRepository extends JpaRepository<CDRRecord, Long> {
     List<CDRRecord> findByCallingMsIdOrReceivingMsId(String msisdn1, String msisdn2);
 

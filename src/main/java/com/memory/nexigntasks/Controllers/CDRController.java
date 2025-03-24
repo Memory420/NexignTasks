@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+/**
+ * Контроллер для получения сырых CDR записей и генерации отчёта.
+ */
 @RestController
 @RequestMapping("/api/cdrrecord/")
 public class CDRController {

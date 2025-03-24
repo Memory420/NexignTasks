@@ -22,6 +22,9 @@ import java.util.List;
 
 import static com.memory.nexigntasks.DTO.CallDurationDTO.secondsToPrettyTime;
 
+/**
+ * Контроллер для формирования и выдачи UDR по абонентам.
+ */
 @RestController
 @RequestMapping("/api/udr")
 public class UDRController {

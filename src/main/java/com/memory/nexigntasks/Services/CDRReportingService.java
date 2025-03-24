@@ -13,6 +13,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+/**
+ * Сервис для асинхронной генерации CSV отчёта с CDR.
+ */
 @Service
 public class CDRReportingService {
     private static final String REPORT_DIR = "reports";

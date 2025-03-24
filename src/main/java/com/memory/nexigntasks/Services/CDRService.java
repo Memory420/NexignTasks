@@ -5,6 +5,10 @@ import com.memory.nexigntasks.Repositories.CDRRecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * Сервис для операций над CDR-записями.
+ * Здесь пример метода getCDRRecord по ID.
+ */
 @Service
 public class CDRService {
     private final CDRRecordRepository repository;

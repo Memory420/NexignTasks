@@ -16,6 +16,10 @@ import java.util.*;
 
 import static com.memory.nexigntasks.Entities.CDRRecord.prettyDateTime;
 
+/**
+ * Основной класс запуска Spring Boot приложения.
+ * Выполняет генерацию случайных абонентов и звонков.
+ */
 @SpringBootApplication
 @EnableAsync
 public class NexignTasksApplication implements CommandLineRunner {

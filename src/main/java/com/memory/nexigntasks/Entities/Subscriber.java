@@ -2,6 +2,10 @@ package com.memory.nexigntasks.Entities;
 
 import jakarta.persistence.*;
 
+/**
+ * Сущность абонента (Subscriber).
+ * Содержит уникальный идентификатор и номер в формате 79XXXXXXXXX.
+ */
 @Entity
 public class Subscriber {
     @Id
