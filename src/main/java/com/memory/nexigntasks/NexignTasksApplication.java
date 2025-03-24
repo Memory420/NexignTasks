@@ -56,16 +56,7 @@ public class NexignTasksApplication implements CommandLineRunner {
         }
 
         records.sort(Comparator.comparing(CDRRecord::getCallStartTime));
-
-        System.out.println("*** Отсортированный вывод дат ***");                  // Логи
-        for (CDRRecord cdrRecord : records) {                                     //
-            System.out.println(prettyDateTime(cdrRecord.getCallStartTime()));     //
-        }                                                                         //
-
         recordRepository.saveAll(records);
-
-
-
     }
 
     // Все методы снизу служебные и нужны для создания тестовых данных
