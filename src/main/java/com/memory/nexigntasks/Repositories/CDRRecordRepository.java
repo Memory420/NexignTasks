@@ -17,11 +17,4 @@ public interface CDRRecordRepository extends JpaRepository<CDRRecord, Long> {
             @Param("msisdn") String msisdn,
             @Param("start") LocalDateTime start,
             @Param("end") LocalDateTime end);
-
-    @Query("SELECT r FROM CDRRecord r WHERE (r.callingMsId = :msisdn OR r.receivingMsId = :msisdn) " +
-            "AND r.callStartTime >= :start AND r.callStartTime < :end")
-    List<CDRRecord> findByMsisdnAndYear(
-            @Param("msisdn") String msisdn,
-            @Param("start") LocalDateTime startOfYear,
-            @Param("end") LocalDateTime endOfYear);
 }

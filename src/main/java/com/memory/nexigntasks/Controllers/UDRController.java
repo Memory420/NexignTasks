@@ -25,10 +25,10 @@ import static com.memory.nexigntasks.DTO.CallDurationDTO.secondsToPrettyTime;
 @RestController
 @RequestMapping("/api/udr")
 public class UDRController {
-    @Autowired
     private final CDRRecordRepository cdrRecordRepository;
     private final SubscriberRepository subscriberRepository;
 
+    @Autowired
     public UDRController(CDRRecordRepository cdrRecordRepository, SubscriberRepository subscriberRepository) {
         this.cdrRecordRepository = cdrRecordRepository;
         this.subscriberRepository = subscriberRepository;
@@ -134,4 +134,5 @@ public class UDRController {
                 new CallDurationDTO(secondsToPrettyTime(outgoingSeconds))
         );
     }
+
 }

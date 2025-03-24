@@ -22,8 +22,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 /**
  * Тесты для CDRController.
- * Обратите внимание, что callType теперь Enum,
- * и в JSON он по умолчанию сериализуется как "OUTGOING" или "INCOMING".
  */
 @SpringBootTest
 @AutoConfigureMockMvc

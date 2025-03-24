@@ -19,6 +19,9 @@ public class Subscriber {
     public Long getId() {
         return id;
     }
+    public void setId(Long id) {
+        this.id = id; // для тестов
+    }
 
     public String getNumber() {
         return number;
